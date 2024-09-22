@@ -1,6 +1,6 @@
 #include <stdexcept>
 #include <gtest/gtest.h>
-#include "../include/number1.h"
+#include "number1.h"
 
 TEST(BasicTest, BasicTest_01) {
     constexpr int start = 2, end = 7;
@@ -21,7 +21,7 @@ TEST(BasicTest, BasicTest_04) {
     EXPECT_EQ(how_one_in_cons(start, end), 0);
 }
 
-TEST(InvalidArgsTest_Death, InvalidArgsTest_01) {
+TEST(InvalidArgsTest_Death, StartMoreEnd) {
     // этот тест проверяет, что ожидаемое исключение выбрасывается
     EXPECT_THROW({
         try {
@@ -35,7 +35,7 @@ TEST(InvalidArgsTest_Death, InvalidArgsTest_01) {
     }, std::invalid_argument);  // проверяем, что выброшено именно std::invalid_argument
 }
 
-TEST(InvalidArgsTest_Death, InvalidArgsTest_02) {
+TEST(InvalidArgsTest_Death, NegativeStart) {
     // этот тест проверяет, что ожидаемое исключение выбрасывается
     EXPECT_THROW({
         try {
@@ -49,7 +49,7 @@ TEST(InvalidArgsTest_Death, InvalidArgsTest_02) {
     }, std::invalid_argument);  // проверяем, что выброшено именно std::invalid_argument
 }
 
-TEST(InvalidArgsTest_Death, InvalidArgsTest_03) {
+TEST(InvalidArgsTest_Death, NegativeBoth) {
     // этот тест проверяет, что ожидаемое исключение выбрасывается
     EXPECT_THROW({
         try {
@@ -63,7 +63,7 @@ TEST(InvalidArgsTest_Death, InvalidArgsTest_03) {
     }, std::invalid_argument);  // проверяем, что выброшено именно std::invalid_argument
 }
 
-TEST(InvalidArgsTest_Death, InvalidArgsTest_04) {
+TEST(InvalidArgsTest_Death, NegativeEnd) {
     // этот тест проверяет, что ожидаемое исключение выбрасывается
     EXPECT_THROW({
         try {
@@ -77,7 +77,7 @@ TEST(InvalidArgsTest_Death, InvalidArgsTest_04) {
     }, std::invalid_argument);  // проверяем, что выброшено именно std::invalid_argument
 }
 
-TEST(OverflowedAnsTest_Death, OverflowedAnsTest_01) {
+TEST(OverflowedAnsTest_Death, OverflowedAns) {
     // этот тест проверяет, что ожидаемое исключение выбрасывается
     EXPECT_THROW({
         try {
