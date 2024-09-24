@@ -14,8 +14,7 @@ void ErrorAns_type(int ans) {
         throw std::overflow_error("Integer type overflowed(Answer is too big)");
     }
 }
-int how_one(int numb) {
-    int ans = 0;
+void how_one(int numb , int& ans) {
     while (numb != 0) {
         if (numb % 2 == 1) {
             ErrorAns_type(ans);
@@ -23,15 +22,14 @@ int how_one(int numb) {
         }
         numb>>=1;
     }
-    return ans;
 }
 
 int how_one_in_cons(int start, int end) {
     Error_Arg(start, end);
-    int ans = 0;
+    int ans{0};
     for (int i = start; i <= end; ++i) {
         ErrorAns_type(ans);
-        ans +=how_one(i);
+        how_one(i, ans);
     }
     return ans;
 }
