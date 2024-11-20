@@ -64,7 +64,7 @@ TEST(polymorphicTest, baseCase) {
     Square s2 {{{1.0f, 0.0f}, {0.0f, 1.0f}, {0.0f, 0.0f}, {1.0f, 1.0f}}};
     Rectangle s3 {{{2.0f, 1.0f}, {0.0f, 1.0f}, {2.0f, 0.0f}, {0.0f, 0.0f}}};
 
-    std::vector<Shape*> const container = {
+    ShapeArray const container = {
         &s1, &s2, &s3
     };
 
